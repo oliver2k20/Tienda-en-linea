@@ -1,0 +1,64 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="BalloonShop.master.cs"
+  Inherits="BalloonShop" %>
+<%@ Register Src="UserControls/CartSummary.ascx" TagName="CartSummary" TagPrefix="uc6" %>
+<%@ Register Src="UserControls/UserInfo.ascx" TagName="UserInfo" TagPrefix="uc5" %>
+<%@ Register Src="UserControls/SearchBox.ascx" TagName="SearchBox" TagPrefix="uc4" %>
+<%@ Register Src="UserControls/CategoriesList.ascx" TagName="CategoriesList" TagPrefix="uc3" %>
+<%@ Register Src="UserControls/DepartmentsList.ascx" TagName="DepartmentsList" TagPrefix="uc2" %>
+<%@ Register Src="UserControls/Header.ascx" TagName="Header" TagPrefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+  <title>Fashion Store</title>
+    <link href="new.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+  <form id="Form1" runat="server">
+    <table cellspacing="0" cellpadding="0" width="770" border="0">
+                <tr>
+                    <td colspan = "2"><uc1:Header ID="Header" runat="server" /></td>
+                </tr>
+                   
+                  <tr>
+                    <td> 
+                        <uc2:DepartmentsList ID="DepartmentsList" runat="server" /><br />
+                        <uc3:CategoriesList ID="CategoriesList" runat="server" /><br />
+                        <uc4:SearchBox id="SearchBox" runat="server"></uc4:SearchBox>
+                    </td>
+
+                     <td>
+                     <uc5:UserInfo ID="UserInfo" runat="server" /><br />
+                     <uc6:CartSummary ID="CartSummary" runat="server" />
+                         
+                     </td>
+                      
+                       
+
+                  </tr>
+                  
+
+                <tr>
+                   <td colspan = "2"> <asp:ContentPlaceHolder ID="contentPlaceHolder" runat="server"></asp:ContentPlaceHolder></td>
+                </tr>
+                
+            </table>
+ 
+ <table align="center">
+ <tr>
+ <td>
+                      <asp:SiteMapDataSource ID="SiteMapDataSource1" Runat="server" />
+  <asp:Menu ID="Menu2" Runat="server" DataSourceID="SiteMapDataSource1">
+  </asp:Menu>
+                      </td>
+ <td>
+ <br />
+ Copyright © L.V. Team 2013 @ Centennial College  
+ OpenSource <a href="https://github.com/alexliubj/OnlineStore">GIT  </a>
+ </td>
+                  
+                  </tr>
+ </table>
+  </form>
+</body>
+</html>
